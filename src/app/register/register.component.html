@@ -1,0 +1,32 @@
+<div>
+    <form class="example-container" [formGroup]="registerForm" (ngSubmit)="registerEmployee()">
+        <mat-form-field id="firstName" [floatLabel]="auto">
+          <input matInput formControlName="firstName" placeholder="First Name" required>
+        </mat-form-field>
+        <mat-form-field id="lastName" [floatLabel]="auto">
+            <input matInput formControlName="lastName" placeholder="Last Name" required>
+        </mat-form-field>
+        <mat-radio-group id="gender" formControlName="gender" required>
+            <mat-label style="font-family:Arial, Helvetica, sans-serif;font-size:18px">Gender</mat-label>
+            <mat-radio-button style="margin-left:25px" value="M">Male</mat-radio-button>
+            <mat-radio-button style="margin-left:25px" value="F">Female</mat-radio-button>
+            <mat-radio-button style="margin-left:25px" value="O">Other</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field id="dateOfBirth">
+            <input required formControlName="dateOfBirth" (click)="picker.open()" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of Birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field id="departmentName" [floatLabel]="auto">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="departmentName" required>
+                <mat-option selected value="">--Please select an option--</mat-option>
+                <mat-option value="Onboarding">Onboarding</mat-option>
+                <mat-option value="Servicing">Servicing</mat-option>
+                <mat-option value="Payments">Payments</mat-option>
+                <mat-option value="Digital">Digital</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button id="submit" mat-raised-button color="primary" [disabled]="!registerForm.valid">Register</button>
+    </form>
+</div>

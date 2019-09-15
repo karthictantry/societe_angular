@@ -1,0 +1,62 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container > * {
+    width: 100%;
+}
+  
+.example-container form {
+    margin-bottom: 20px;
+}
+  
+.example-container form > * {
+    margin: 5px 0;
+}
+  
+.example-container .mat-radio-button {
+    margin: 0 12px;
+}
+
+form > #firstName {
+    position: relative;
+    top: 80px;
+    left: 100px;
+    width: 30%; 
+}
+
+form > #lastName {
+    position: relative;
+    top: 15px;
+    left: 700px;
+    width: 30%; 
+}
+
+form > #gender {
+    position: relative;
+    top: 80px;
+    left: 100px;
+    width: 30%; 
+}
+
+form > #dateOfBirth {
+    position: relative;
+    top: 40px;
+    left: 700px;
+    width: 30%; 
+}
+
+form > #departmentName {
+    position: relative;
+    top: 100px;
+    left: 300px;
+    width: 40%; 
+}
+
+form > #submit {
+    position: relative;
+    top: 150px;
+    left: 35%;
+    width: 10%; 
+}

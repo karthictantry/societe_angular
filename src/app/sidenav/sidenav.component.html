@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+        (closed)="events.push('close!')">
+            <ul style="color:white;list-style-type: none">
+                <li><a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/register']" routerLinkActive="active">
+                    <span class="navLink" matLine>Register</span>
+                </a></li>
+                <br/>
+                <li><a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/']" routerLinkActive="active">
+                    <span class="navLink" matLine>View</span>
+                </a></li>
+            </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p *ngIf="!opened"><button class="sideNavToggle" mat-button (click)="sidenav.toggle()">></button></p>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,29 @@
+.sidenav-container mat-sidenav {
+    width: 100%;
+    background-color: #313233;
+}
+
+.sidenav-container > mat-sidenav-content {
+    position: relative;
+    height: 689px;
+    display: block;
+}
+
+.navLink {
+    margin-left:-15px;
+    color: white;
+    font-size: 25px;
+    font-weight:  250;
+}
+
+.navLink a{
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.sideNavToggle {
+    margin-left: -20px;
+    margin-top: 300px;
+    background-color:#313233;
+    color:white
+}
