@@ -1,0 +1,38 @@
+.toolbar {
+    height: 100px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #135fac;
+    color: white;
+    font-weight: 600;
+}
+
+.toolbar > span {
+    margin-left: 36%;
+    font-size: 40px;
+}
+
+.toolbar :hover {
+    transition: 1.5s;
+    margin-left: 32%;
+    font-size: 50px;
+    color: rgba(49, 49, 49, 0.87)
+}
+
+.sidenav-container {
+    position: relative;
+    width:140px;
+    top: 8px;
+    bottom: 0;
+    left: -8px;
+    right: 0;
+}
+
+.bodyarea {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    left: 140px;
+}
