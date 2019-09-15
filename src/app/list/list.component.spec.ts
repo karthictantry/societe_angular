@@ -22,4 +22,11 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should initialize  and dataSource at ngOnInit', () => {
+    let spy = spyOn(component, 'ngOnInit').and.callThrough();
+    expect(component.ngOnInit).toHaveBeenCalled();
+    expect(component.employees).toBeDefined();
+    expect(component.dataSource).toBeDefined();
+  });
 });

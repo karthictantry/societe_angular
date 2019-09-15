@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { RegisterComponent } from './register.component';
+import { EmployeeService } from './employee.service';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -21,5 +22,11 @@ describe('RegisterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize employee at ngOnInit', () => {
+    let spy = spyOn(component, 'ngOnInit').and.callThrough();
+    expect(component.ngOnInit).toHaveBeenCalled();
+    expect(component.employee).toBeDefined();
   });
 });
