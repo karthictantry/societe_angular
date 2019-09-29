@@ -16,18 +16,10 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployees() : Observable<Employee[]> {
-    this.httpOptions.headers.append('Access-Control-Allow-Origin', 'http://localhost:8080');
-    this.httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    this.httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    this.httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
     return this.http.get<Employee[]>(this.serviceURL, this.httpOptions);
   }
 
   registerEmployee(employee: Employee) {
-    this.httpOptions.headers.append('Access-Control-Allow-Origin', 'http://localhost:8080');
-    this.httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    this.httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    this.httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
     return this.http.post(this.serviceURL + '/register', employee, this.httpOptions);
   }
 
