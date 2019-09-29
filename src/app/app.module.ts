@@ -41,7 +41,6 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     MatSelectModule,
     MatNativeDateModule,
     HttpClientModule,
-    HttpClientJsonpModule,
     MatDatepickerModule,
     MatFormFieldModule,
     AppRoutingModule,

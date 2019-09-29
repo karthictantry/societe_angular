@@ -1,9 +1,7 @@
 export class Employee {
-    private firstName: string;
-    private lastName: string;
-    private gender: string;
-    private dateOfBirth: string;
-    private departmentName: string;
+
+    constructor(private firstName: string, private lastName: string, private gender: string, private dateOfBirth: string,
+                private departmentName: string) { }
 
     get FirstName(): string {
         return this.firstName;

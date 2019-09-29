@@ -25,20 +25,24 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit() {
-    this.employee = new Employee();
   }
 
   registerEmployee() {
     console.log(this.registerForm.value);
-    this.employee.FirstName = this.registerForm.value.firstName;
-    this.employee.LastName = this.registerForm.value.lastName;
-    this.employee.Gender = this.registerForm.value.gender;
-    const date: Date = this.registerForm.value.dateOfBirth;
-    this.employee.DateOfBirth = date.getDate().toString() + ' ' + (+date.getMonth() + +1).toString() + ' ' + date.getFullYear().toString();
-    this.employee.DepartmentName = this.registerForm.value.departmentName;
+    this.employee = new Employee(this.registerForm.value.firstName,
+      this.registerForm.value.lastName, this.registerForm.value.gender,
+      this.registerForm.value.dateOfBirth,
+      this.registerForm.value.departmentName);
+    console.log(this.employee);
     this.employeeService.registerEmployee(this.employee)
-    .subscribe(data => this.response = data);
-    this.router.navigate(['']);
+    .subscribe(data => {
+      if (data instanceof ErrorEvent) {
+        alert('Employee Registration failed');
+      } else {
+        this.response = data;
+        this.router.navigate(['']);
+      }
+    });
   }
 
   ngOnDestroy() {
